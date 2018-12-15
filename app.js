@@ -9,7 +9,7 @@ const clovaSkillHandler = clova.Client
         responseHelper.setSimpleSpeech({
             lang: 'ja',
             type: 'PlainText',
-            value: 'ファインペイ残高は 500 point です',
+            value: 'こちら、ファインペイ銀行です。',
         });
     })
 
@@ -25,15 +25,27 @@ const clovaSkillHandler = clova.Client
             let speech = {
                 lang: 'ja',
                 type: 'PlainText',
-                value: `オススメのカレー屋は line本社 です。`
+                value: `わたくしの　辞書には存在しない命令ですね・・・。`
             }
-            if(slots.area === '秋葉原'){
-                speech.value = `${slots.area}のオススメのカレー屋は フジヤマドラゴンカレー です。`;
-            }else if(slots.area === '神保町'){
-                speech.value = `${slots.area}のオススメのカレー屋は 共栄堂 です。`;
-            }else if(slots.area === '神田'){
-                speech.value = `${slots.area}のオススメのカレー屋は line本社 です。`;
+            if(slots.area === '残高'){
+                speech.value = /*${slots.area}*/`残高は`+balance+'ポイントです';
+            }else if(slots.area === '何ポイント'){
+                speech.value = /*${slots.area}*/`あと`+balance+'ポイント使えます';
+            }else if(slots.area === '100ポイント'){
+                speech.value = `${slots.area}使いました。残りは`+balance+`ポイントです`;
+            }else if(slots.area === '200ポイント'){
+                speech.value = `${slots.area}使いました。残りは`+balance+`ポイントです`;
+            }else if(slots.area === '300ポイント'){
+                speech.value = `${slots.area}使いました。残りは`+balance+`ポイントです`;
+            }else if(slots.area === '400ポイント'){
+                speech.value = `${slots.area}使いました。残りは`+balance+`ポイントです`;
+            }else if(slots.area === '500ポイント'){
+                speech.value = `${slots.area}使いました。残りは`+balance+`ポイントです`;
+            
+            }else if(slots.area === ''){
+                speech.value = `ええっと。ごめんなさい、不器用なもので。`;
             }
+            
             responseHelper.setSimpleSpeech(speech);
             responseHelper.setSimpleSpeech(speech, true);
         }
