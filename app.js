@@ -33,14 +33,19 @@ const clovaSkillHandler = clova.Client
             }else if(slots.money === '何ポイント'){
                 speech.value = /*${slots.money}*/`あと`+balance+'ポイント使えます';
             }else if(slots.money === '100ポイント'){
+                //ポイントを減らす処理
                 speech.value = `${slots.money}使いました。残りは`+balance+`ポイントです`;
             }else if(slots.money === '200ポイント'){
+                //ポイントを減らす処理
                 speech.value = `${slots.money}使いました。残りは`+balance+`ポイントです`;
             }else if(slots.money === '300ポイント'){
+                //ポイントを減らす処理
                 speech.value = `${slots.money}使いました。残りは`+balance+`ポイントです`;
             }else if(slots.money === '400ポイント'){
+                //ポイントを減らす処理
                 speech.value = `${slots.money}使いました。残りは`+balance+`ポイントです`;
             }else if(slots.money === '500ポイント'){
+                //ポイントを減らす処理
                 speech.value = `${slots.money}使いました。残りは`+balance+`ポイントです`;
             
             }else if(slots.money === ''){
