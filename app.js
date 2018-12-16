@@ -27,7 +27,7 @@ const clovaSkillHandler = clova.Client
                 type: 'PlainText',
                 value: '何の用でしょうか'
             }
-            if(slots.money === 'ざんだか')
+            if(slots.money === '残高')
             {
                 speech.value = /*${slots.money}*/`残高は`+balance+'ポイントです';
             }else if(slots.money === '何ポイント'){
