@@ -25,24 +25,25 @@ const clovaSkillHandler = clova.Client
             let speech = {
                 lang: 'ja',
                 type: 'PlainText',
-                value: `わたくしの　辞書には存在しない命令ですね・・・。`
+                value: '何の用でしょうか'
             }
-            if(slots.area === 'ざんだか'){
-                speech.value = /*${slots.area}*/`残高は`+balance+'ポイントです';
-            }else if(slots.area === '何ポイント'){
-                speech.value = /*${slots.area}*/`あと`+balance+'ポイント使えます';
-            }else if(slots.area === '100ポイント'){
-                speech.value = `${slots.area}使いました。残りは`+balance+`ポイントです`;
-            }else if(slots.area === '200ポイント'){
-                speech.value = `${slots.area}使いました。残りは`+balance+`ポイントです`;
-            }else if(slots.area === '300ポイント'){
-                speech.value = `${slots.area}使いました。残りは`+balance+`ポイントです`;
-            }else if(slots.area === '400ポイント'){
-                speech.value = `${slots.area}使いました。残りは`+balance+`ポイントです`;
-            }else if(slots.area === '500ポイント'){
-                speech.value = `${slots.area}使いました。残りは`+balance+`ポイントです`;
+            if(slots.money === 'ざんだか')
+            {
+                speech.value = /*${slots.money}*/`残高は`+balance+'ポイントです';
+            }else if(slots.money === '何ポイント'){
+                speech.value = /*${slots.money}*/`あと`+balance+'ポイント使えます';
+            }else if(slots.money === '100ポイント'){
+                speech.value = `${slots.money}使いました。残りは`+balance+`ポイントです`;
+            }else if(slots.money === '200ポイント'){
+                speech.value = `${slots.money}使いました。残りは`+balance+`ポイントです`;
+            }else if(slots.money === '300ポイント'){
+                speech.value = `${slots.money}使いました。残りは`+balance+`ポイントです`;
+            }else if(slots.money === '400ポイント'){
+                speech.value = `${slots.money}使いました。残りは`+balance+`ポイントです`;
+            }else if(slots.money === '500ポイント'){
+                speech.value = `${slots.money}使いました。残りは`+balance+`ポイントです`;
             
-            }else if(slots.area === ''){
+            }else if(slots.money === ''){
                 speech.value = `ええっと。ごめんなさい、不器用なもので。`;
             }
             
