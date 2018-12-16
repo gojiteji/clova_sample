@@ -1,5 +1,6 @@
 const clova = require('@line/clova-cek-sdk-nodejs');
 const express = require('express');
+var balance=0;
 
 const clovaSkillHandler = clova.Client
     .configureSkill()
@@ -12,7 +13,6 @@ const clovaSkillHandler = clova.Client
             value: 'こちら、ファインペイ銀行です。',
         });
     })
-
     //ユーザーからの発話が来たら反応する箇所
     .onIntentRequest(async responseHelper => {
         const intent = responseHelper.getIntentName();
@@ -27,7 +27,7 @@ const clovaSkillHandler = clova.Client
                 type: 'PlainText',
                 value: `わたくしの　辞書には存在しない命令ですね・・・。`
             }
-            if(slots.area === '残高'){
+            if(slots.area === 'ざんだか'){
                 speech.value = /*${slots.area}*/`残高は`+balance+'ポイントです';
             }else if(slots.area === '何ポイント'){
                 speech.value = /*${slots.area}*/`あと`+balance+'ポイント使えます';
